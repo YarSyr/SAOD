@@ -300,7 +300,7 @@ int bstree::bsheight(nodeptr p) //Реализация метода вывода
 	}
 }
 
-nodeptr bstree:: srl(nodeptr &p1) //Служебная ункция добавления узлов слева
+nodeptr bstree:: srl(nodeptr &p1) //Служебная функция добавления узлов слева
 {
 	nodeptr p2;
 	p2 = p1->left;
@@ -310,7 +310,7 @@ nodeptr bstree:: srl(nodeptr &p1) //Служебная ункция добавл
 	p2->height = max(bsheight(p2->left),p1->height) + 1;
 	return p2;
 }
-nodeptr bstree:: srr(nodeptr &p1) //Служебная ункция добавления узлов справа
+nodeptr bstree:: srr(nodeptr &p1) //Служебная функция добавления узлов справа
 {
 	nodeptr p2;
 	p2 = p1->right;
@@ -320,12 +320,12 @@ nodeptr bstree:: srr(nodeptr &p1) //Служебная ункция добавл
 	p2->height = max(p1->height,bsheight(p2->right)) + 1;
 	return p2;
 }
-nodeptr bstree:: drl(nodeptr &p1) //Служебная ункция добавления узлов слева
+nodeptr bstree:: drl(nodeptr &p1) //Служебная функция добавления узлов слева
 {
 	p1->left=srr(p1->left);
 	return srl(p1);
 }
-nodeptr bstree::drr(nodeptr &p1) //Служебная ункция добавления узлов справа
+nodeptr bstree::drr(nodeptr &p1) //Служебная функция добавления узлов справа
 {
 	p1->right = srl(p1->right);
 	return srr(p1);
